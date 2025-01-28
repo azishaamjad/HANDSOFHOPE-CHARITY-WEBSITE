@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Hands of Hope</title>
+  <link rel="stylesheet" href="Signup.css">
+</head>
+<body>
+  <!-- Background Image with Blur Effect -->
+  <div class="background-image"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="brand-logo">HANDSOFHOPE</div>
+    <div class="navdiv">
+      <ul>
+        <li><a href="homepage.html" class="obutton-link">HOME</a></li>
+        <li><a href="about.html" class="obutton-link">ABOUT</a></li>
+        <li><a href="contact.html" class="obutton-link">CONTACT</a></li>
+        <li><a href="FAQ.html" class="obutton-link">FAQ's</a></li>
+        <li><a href="login.html" class="button-link">LOGIN</a></li>
+        <li><a href="signup.html" class="button-link">SIGN UP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="signup-container">
+    <header>
+      <h1>Sign Up to Make a Difference</h1>
+      <p>Join the Hands of Hope community and help us spread compassion and care.</p>
+    </header>
+
+    <form id="signup-form" class="signup-form">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+      <button id="signup-button" type="submit" class="signup-button">Sign Up</button>
+    </form>
+
+    <!-- Error message element -->
+    <p id="error-message" style="color: red; display: none;">Please fix the errors and try again.</p>
+
+    <footer>
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Add event listener to the signup form
+    document.getElementById('signup-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form's default submission behavior
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirm-password').value.trim();
+      const errorMessage = document.getElementById('error-message');
+
+      // Validation logic
+      if (!email || !password || !confirmPassword) {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'All fields are required.';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      // Redirect to homepage if validation passes
+      errorMessage.style.display = 'none'; // Hide error message if any
+      window.location.href = 'homepage.html';
+    });
+  </script>
+</body>
+</html>

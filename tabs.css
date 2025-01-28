@@ -1,0 +1,181 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  color: #DC143C; /* Crimson */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Styling */
+.event-header {
+  background: #DC143C; /* Crimson */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.event-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.event-header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.event-header .donate-btn {
+  background: #fff;
+  color: #DC143C; /* Crimson */
+  padding: 12px 35px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-header .donate-btn:hover {
+  background: #DC143C; /* Crimson */
+  color: #fff;
+}
+
+/* Event Details Section */
+.event-details {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.event-details .content {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-details .content h2 {
+  font-size: 2rem;
+  color: #DC143C; /* Crimson */
+  margin-bottom: 15px;
+}
+
+.event-details .content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.event-details .content ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.event-details .content ul li {
+  margin-bottom: 10px;
+}
+
+.event-details .content .donate-btn {
+  background-color: #DC143C; /* Crimson */
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.event-details .content .donate-btn:hover {
+  background-color: #B22222; /* Dark Crimson */
+}
+
+.event-details .image {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-details .image img {
+  border-radius: 8px;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+/* New Section Styles */
+.goals, .timeline {
+  margin-top: 30px;
+}
+
+.goals ul, .timeline ul {
+  list-style: none;
+}
+
+.goals li, .timeline li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .event-details {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .event-details .content {
+    margin-bottom: 20px;
+  }
+
+  .event-header h1 {
+    font-size: 2rem;
+  }
+
+  .event-header p {
+    font-size: 1rem;
+  }
+
+  .event-details .content h2 {
+    font-size: 1.8rem;
+  }
+
+  .donate-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-details .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .event-header h1 {
+    font-size: 1.5rem;
+  }
+}

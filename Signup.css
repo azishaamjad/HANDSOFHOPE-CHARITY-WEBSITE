@@ -1,0 +1,221 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align from the top */
+  overflow: hidden; /* Prevent scrolling */
+  background-color: #f9f9f9;
+  position: relative; /* Ensure background positioning works */
+}
+
+/* Background Image with Blur Effect */
+.background-image {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("abc.jpeg.jpg");
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  filter: blur(6px) brightness(0.7);
+  z-index: -1;
+}
+
+
+/* Navbar */
+.navbar {
+  position: fixed; /* Fix navbar at the top */
+  top: 0;
+  left: -50;
+  width: 100%;
+  background: crimson;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Flex container for navbar links */
+.navdiv {
+  font-size: 18px; /* Consistent font size */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: color 0.3s, transform 0.3s; 
+}
+
+.navdiv a:hover {
+  color: white;
+  background-color: black;
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+/* Styling for the list items */
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0 10px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.button-link {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-link:hover {
+  background-color: black;
+  color: white;
+}
+
+.brand-logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-left: 20px;
+}
+
+
+/* Signup Container */
+.signup-container {
+  background: rgba(255, 255, 255, 0.9); /* Subtle white with transparency */
+  padding: 15px; /* Reduced padding */
+  width: 70%;
+  max-width: 400px; /* Reduced max-width */
+  min-height: 260px; /* Reduced height */
+  margin-top: 100px; /* Adjusted to fit navbar */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Header Text */
+header h1 {
+  font-size: 1.4em; /* Smaller header font size */
+  margin-bottom: 8px;
+  color: crimson;
+}
+
+header p {
+  font-size: 1em; /* Smaller paragraph font size */
+  margin-bottom: 12px;
+  color: #555;
+}
+
+/* Form Styles */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced gap between fields */
+}
+
+.signup-form label {
+  text-align: left;
+  font-weight: bold;
+  color: crimson;
+  font-size: 0.9em; /* Smaller label font size */
+}
+
+.signup-form input {
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 12px; /* Smaller rounded corners */
+  width: 95%;
+  font-size: 1em; /* Reduced font size */
+}
+
+.signup-form input::placeholder {
+  color: #aaa;
+}
+
+/* Signup Button */
+.signup-button {
+  background-color: crimson;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em; /* Smaller font size */
+  padding: 10px; /* Reduced padding */
+  border: none;
+  border-radius: 12px; /* Smaller rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup-button:hover {
+  background-color: #e63946;
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
+/* Footer Text */
+footer p {
+  font-size: 0.9em; /* Reduced font size */
+  margin-top: 18px;
+}
+
+footer a {
+  color: crimson;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 600px) {
+  .signup-container {
+    padding: 15px;
+    width: 85%;
+    max-width: 90%;
+  }
+
+  header h1 {
+    font-size: 1.3em; /* Smaller heading on mobile */
+  }
+
+  .signup-form input {
+    font-size: 0.9em; /* Smaller font size for input fields */
+  }
+
+  .signup-button {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  footer p {
+    font-size: 0.8em;
+  }
+}

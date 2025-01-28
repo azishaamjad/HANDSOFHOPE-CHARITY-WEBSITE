@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs - Hands of Hope</title>
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Ensuring no gap at the top and no additional margin for body */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Full-width, fixed navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: crimson;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .navdiv {
+      font-size: 18px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 15px 20px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0 10px;
+    }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Hover effect for navbar items */
+    ul li a:hover {
+      color: black;
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    .button-link {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-left: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .button-link:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .brand-logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      padding-left: 20px;
+    }
+
+    /* FAQ Container */
+    .faq-container {
+    background-color: transparent; /* Remove white box */
+    border: none; /* If there's a border, remove it */
+      padding: 40px;
+      width: 80%;
+      max-width: 800px;
+      height: auto;
+      margin: 120px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px crimson; /* Crimson glow */
+      text-align: center; /* Center text */
+    }
+
+    /* FAQ Header */
+    header h1 {
+      font-size: 2em;
+      color: crimson;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    /* FAQ List */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    /* FAQ Item */
+    .faq-item {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column; /* Stack icon and text vertically */
+      align-items: center; /* Center icon and text horizontally */
+      cursor: pointer;
+      transition: background 0.3s;
+      text-align: center; /* Center text inside FAQ item */
+      width: 100%; /* Full width for better responsiveness */
+    }
+
+    .faq-item:hover {
+      background-color: #ffebeb;
+    }
+
+    .faq-item h2 {
+      font-size: 1.4em;
+      color: crimson;
+      margin-top: 10px;
+    }
+
+    .faq-item p {
+      font-size: 1em;
+      color: #555;
+      display: none;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .faq-item.open p {
+      display: block;
+    }
+
+    /* Icon Style */
+    .icon {
+      font-size: 40px; /* Larger icon size */
+      color: crimson;
+    }
+
+    /* Media Queries for Mobile Responsiveness */
+    @media (max-width: 600px) {
+      .faq-container {
+        padding: 20px;
+        width: 90%;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .faq-item h2 {
+        font-size: 1.2em;
+      }
+
+      .faq-item p {
+        font-size: 0.9em;
+      }
+    }
+    footer {
+            background-color: crimson;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="brand-logo">HANDSOFHOPE</div>
+    <div class="navdiv">
+        <ul>
+            <li><a href="homepage.html" class="obutton-link">HOME</a></li>
+            <li><a href="about.html" class="obutton-link">ABOUT</a></li>
+            <li><a href="contact.html" class="obutton-link">CONTACT</a></li>
+            <li><a href="FAQ.html" class="obutton-link">FAQ's</a></li>
+            <li><a href="login.html" class="button-link">LOGIN</a></li>
+            <!-- Only one SIGN UP link should exist, pointing to the signup page -->
+            <li><a href="signup.html" class="button-link">SIGN UP</a></li> <!-- Correct link to Sign Up page --></ul>
+    </div>
+  </nav>
+
+  <!-- FAQ Section -->
+  <div class="faq-container">
+    <header>
+      <h1>Frequently Asked Questions</h1>
+      <p>Answers to the most common questions about how Hands of Hope supports those in need.</p>
+    </header>
+
+    <!-- FAQs List -->
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="icon"><i class="fas fa-hands-helping"></i></div> <!-- Helping icon -->
+        <h2>How does Hands of Hope help the homeless?</h2>
+        <p>We provide essential supplies, shelter, and medical care to those experiencing homelessness. Our outreach programs work to assist them in finding stable housing and employment.</p>
+      </div>
+      <div class="faq-item">
+        <div class="icon"><i class="fas fa-utensils"></i></div> <!-- Feed the hungry icon -->
+        <h2>How do you help feed the hungry?</h2>
+        <p>Through our food distribution programs, we provide nutritious meals to individuals and families who are struggling with hunger, especially in underprivileged areas.</p>
+      </div>
+      <div class="faq-item">
+        <div class="icon"><i class="fas fa-cogs"></i></div> <!-- Support vendors icon -->
+        <h2>What is your support for street vendors?</h2>
+        <p>We financially assist vendors and individuals selling items on the streets, helping them maintain their livelihoods and support their families. Our goal is to help them sustain a stable income.</p>
+      </div>
+      <div class="faq-item">
+        <div class="icon"><i class="fas fa-heart"></i></div> <!-- Identify poverty icon -->
+        <h2>How do you identify those in extreme poverty?</h2>
+        <p>We visit underdeveloped areas and communities to identify those living in extreme poverty. Our team conducts outreach programs to assess their needs and provide necessary resources.</p>
+      </div>
+      <div class="faq-item">
+        <div class="icon"><i class="fas fa-first-aid"></i></div> <!-- Medical treatments icon -->
+        <h2>How do you fundraise for medical treatments?</h2>
+        <p>We organize events and campaigns to raise funds for medical treatments, focusing on those who cannot afford necessary healthcare. These funds go directly to those in need of urgent medical assistance.</p>
+      </div>
+      <div class="faq-item">
+        <div class="icon"><i class="fas fa-globe-americas"></i></div> <!-- Global issues icon -->
+        <h2>How does Hands of Hope address global issues?</h2>
+        <p>We organize global events aimed at raising awareness and funds for issues such as climate change, poverty alleviation, and healthcare access. Our goal is to create a positive impact on a global scale.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+        <p>&copy; 2024 Hands of Hope. All Rights Reserved.</p>
+    </footer>
+
+  <script>
+    // Add event listener to FAQ items to toggle answer visibility
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Virtual Charity Event</title>
+  <link rel="stylesheet" href="create_event.css">
+  <script>
+    function redirectToEvents(event) {
+      // Prevent form submission (if you want to handle it through JavaScript)
+      event.preventDefault();
+      
+      // Perform form validation or submission here if needed
+
+      // Redirect to events page
+      window.location.href = "event.html";  // Change to the actual events page URL
+    }
+  </script>
+</head>
+<body>
+  <header class="event-header">
+    <h1>Create a Virtual Charity Event</h1>
+    <p>Organize your own virtual charity event and make a difference!</p>
+  </header>
+
+  <main class="create-event-container">
+    <form class="event-form" action="events.html" method="POST" onsubmit="redirectToEvents(event)">
+      <div class="form-section">
+        <label for="event-name">Event Name</label>
+        <input type="text" id="event-name" name="event-name" placeholder="Enter your event name" required>
+      </div>
+
+      <div class="form-section">
+        <label for="event-description">Event Description</label>
+        <textarea id="event-description" name="event-description" rows="5" placeholder="Describe your event..." required></textarea>
+      </div>
+
+      <div class="form-section">
+        <label for="event-date">Event Date</label>
+        <input type="date" id="event-date" name="event-date" required>
+      </div>
+
+      <div class="form-section">
+        <label for="event-goal">Fundraising Goal ($)</label>
+        <input type="number" id="event-goal" name="event-goal" placeholder="Set your fundraising goal" required>
+      </div>
+
+      <div class="form-section">
+        <label for="event-timeline">Event Timeline</label>
+        <textarea id="event-timeline" name="event-timeline" rows="3" placeholder="Outline your event timeline..." required></textarea>
+      </div>
+
+      <div class="form-section">
+        <label for="event-image">Event Image</label>
+        <input type="file" id="event-image" name="event-image" accept="image/*" required>
+      </div>
+
+      <div class="form-section">
+        <label for="event-category">Event Category</label>
+        <select id="event-category" name="event-category" required>
+          <option value="education">Education</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="food-security">Food Security</option>
+          <option value="emergency-relief">Emergency Relief</option>
+          <option value="environment">Environment</option>
+        </select>
+      </div>
+
+      <div class="form-section">
+        <label for="event-visibility">Event Visibility</label>
+        <select id="event-visibility" name="event-visibility" required>
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+        </select>
+      </div>
+
+      <div class="form-section">
+        <button type="submit" class="create-btn">Create Event</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>Empowering communities through virtual charity events.</p>
+  </footer>
+
+</body>
+</html>

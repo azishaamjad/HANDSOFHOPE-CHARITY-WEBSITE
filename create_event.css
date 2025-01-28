@@ -1,0 +1,133 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('abc.jpeg.jpg'); /* Optional background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Ensure the blur effect stays in place */
+}
+
+/* Background Blur Effect */
+body::before {
+    content: "";
+    position: fixed; /* Fix the background to remain blurred even on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1; /* Keep the blur effect behind the content */
+    pointer-events: none; /* Prevent interaction with the blurred background */
+}
+
+/* Header Styles */
+.event-header {
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    background-color: rgba(188, 14, 14, 0.5); /* Semi-transparent background */
+}
+
+.event-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.event-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Create Event Form Styles */
+.create-event-container {
+    max-width: 600px; /* Reduced max width for a thinner form */
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Set width as a percentage for responsiveness */
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Added spacing between fields */
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+    border-color: crimson;
+    background-color: #fff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button.create-btn {
+    background-color: crimson;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button.create-btn:hover {
+    background-color: darkred;
+}
+
+/* Footer Styles */
+footer {
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+}

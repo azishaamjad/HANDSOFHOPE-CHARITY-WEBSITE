@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Hands of Hope</title>
+    <style>
+        /* Global styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Set a charity-related background image with a fixed position */
+        body {
+    background: url('download (4).jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+/* Add the dimming effect by overlaying a semi-transparent color */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1710px;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for dimming effect */
+    z-index: -1; /* Ensure it's below the content */
+}
+
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: crimson;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .navdiv {
+            font-size: 18px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0 10px;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        ul li a:hover {
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .button-link {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-link:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .brand-logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-left: 20px;
+        }
+
+        /* Main container for the page content */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 120px 50px 50px;
+        }
+
+        /* Left side white box for the donation form */
+        .donation-box {
+            width: 50%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        .donation-box h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            color: crimson;
+            animation: fadeIn 2s ease-in-out infinite; 
+        }
+        @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        .donation-box p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Donation Type Buttons */
+        .donation-type-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .donation-type-buttons button {
+            width: 48%;
+            padding: 12px;
+            font-size: 1.2em;
+            background-color: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .donation-type-buttons button:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
+
+        /* Donation Amount Options */
+        .donation-amounts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 30px;
+            width: 300px;
+        }
+
+        .donation-amounts button, .donation-amounts input {
+            padding: 15px;
+            font-size: 1em;
+            background-color: #f5f5f5;
+            color: black;
+            border: 1px solid crimson;
+            border-radius: 5px;
+            cursor: pointer;
+            width:298px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+            
+        }
+
+        .donation-amounts button:hover {
+            background-color: crimson;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Form fields styling */
+        .donation-box select, .donation-box input[type="number"] {
+            width: 300px;
+            padding: 12px;
+            margin: 10px 0;
+            align-self: center;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        /* Billing Information Section */
+.donation-box h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Styling the form elements in Billing Information */
+.donation-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.donation-box form input,
+.donation-box form select,
+.donation-box form textarea {
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Styling the textarea for address */
+.donation-box form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Focus effects for form fields */
+.donation-box form input:focus,
+.donation-box form select:focus,
+.donation-box form textarea:focus {
+    border-color: crimson;
+    outline: none;
+}
+
+/* Add space between buttons and form fields */
+.donation-box form button {
+    padding: 12px;
+    font-size: 1.2em;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+.donation-box form button:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+
+        /* Right side: Blank or background content */
+        /* Slideshow styling */
+/* Add an overlay with dim effect to the slideshow */
+.slideshow {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    width: 540px;
+    height: 450px;
+    margin-right: -40px;
+    z-index: -1;
+    overflow: hidden;
+    animation: slideShow 12s infinite; /* Adjust timing if needed */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Add the dimming effect by overlaying a semi-transparent color */
+.slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for dimming effect */
+    z-index: 1;
+}
+
+/* Keyframes for the slideshow */
+@keyframes slideShow {
+    0% { background-image: url('download (4).jpg'); }
+    25% { background-image: url('images (1).jpg'); }
+    50% { background-image: url('charity.jpg'); }
+    75% { background-image: url('download (2).jpg'); }
+    100% { background-image: url('download (4).jpg'); }
+}
+
+/* Ensure .right-content content is visible above the slideshow */
+.right-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    
+}
+
+.right-content .message {
+  margin-top: -450px;
+    margin-right: -40px;
+    position: relative;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for text */
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+    
+        /* For responsiveness */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                padding: 70px 20px;
+            }
+
+            .donation-box, .right-content {
+                width: 90%;
+            }
+        }
+
+        .bottom {
+    background-color: crimson; /* Set the background color to crimson */
+    color: white; /* Set the text color to white */
+    padding: 15px 30px; /* Add padding for better spacing */
+    font-size: 1.2em; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth transitions */
+}
+
+.bottom:hover {
+    background-color: darkred; /* Darker crimson shade on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="brand-logo">HANDSOFHOPE</div>
+    <div class="navdiv">
+        <ul>
+            <li><a href="homepage.html" class="obutton-link">HOME</a></li>
+            <li><a href="about.html" class="obutton-link">ABOUT</a></li>
+            <li><a href="contact.html" class="obutton-link">CONTACT</a></li>
+            <li><a href="FAQ.html" class="obutton-link">FAQ's</a></li>
+            <li><a href="login.html" class="button-link">LOGIN</a></li>
+            <li><a href="signup.html" class="button-link">SIGN UP</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Left side white box for donation form -->
+    <div class="donation-box">
+        <h1>Donate Today and Be a Source of Happiness</h1><br>
+        <b><p style="color: crimson; font-size: 20px; text-align: left; ">Please select your donation type</p></b>
+        <br>
+        <!-- Donation Type -->
+        <div class="donation-type-buttons">
+            <button id="one-time" onclick="updateAmounts('once')">One-Time</button>
+            <button id="monthly" onclick="updateAmounts('monthly')">Monthly</button>
+        </div>
+        <br><br>
+
+        <!-- Donation Amount -->
+        <b><label style="color: crimson; font-size: 20px; text-align: left; ; " for="donation-amount">Choose Your Amount</label></b><br><br>
+        <div id="donation-amount" class="donation-amounts">
+            <!-- Amount options will be dynamically populated here -->
+        </div>
+
+        <!-- "Other" Amount Input -->
+        <div id="other-amount" class="donation-amounts">
+            <input type="number" id="custom-amount" placeholder="Enter Your Amount"><br>
+            <button onclick="submitCustomAmount()">Submit</button>
+        </div>
+
+        <!-- Billing Information (New Section) -->
+        <h3 style="color: crimson; font-size: 20px; text-align: left; ">Enter Your Billing Information</h3>
+        <form action="#" method="POST">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="email" placeholder="Email" required>
+            <select required>
+                <option value="">Select Country</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="India">India</option>
+                
+                <option value="England">England</option>
+                
+
+                
+                <!-- Add more countries as needed -->
+            </select>
+            <input type="text" placeholder="ZIP Code" required>
+            <textarea placeholder="Address" rows="3" required></textarea>
+            <input type="tel" placeholder="Contact Number" required>
+        </form>
+
+
+        <!-- Payment Information (optional, for future implementation) -->
+        <b><p  style="color: crimson; font-size: 20px; text-align: left; ">Enter your payment details:</p></b>
+        <input type="number" placeholder="Card Number" required>
+        <input type="number" placeholder="CVV" required>
+        <input type="number" placeholder="Expiry Month" required>
+        <input type="number" placeholder="Expiry Year" required>
+        <br><br>
+        <button class="bottom" onclick="showMessage()">Donate Now</button>
+    </div>
+
+    <!-- Right side for charity image and message -->
+    <!-- Right side for charity image and message -->
+<div class="right-content">
+  <div class="slideshow"></div> <!-- Slideshow Element -->
+  <div class="message">
+      <h2>Transforming Lives Together</h2>
+      <p>Be part of the change you want to see. Donate now and spread hope.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+    function updateAmounts(type) {
+        const amountContainer = document.getElementById('donation-amount');
+        const otherAmountContainer = document.getElementById('other-amount');
+        amountContainer.innerHTML = '';  // Clear current options
+        otherAmountContainer.style.display = 'block';  // Show "Other" input
+
+        let amounts = [];
+        if (type === 'once') {
+            amounts = [500, 1000, 5000, 10000, 15000];  // One-time donation amounts
+        } else if (type === 'monthly') {
+            amounts = [500, 1000, 3000, 5000, 10000];  // Monthly donation amounts
+        }
+
+        // Add new options based on the selected type
+        amounts.forEach(amount => {
+            const button = document.createElement('button');
+            button.textContent = `PKR ${amount}`;
+            button.onclick = function() {
+                alert(`You selected PKR ${amount} donation.`);
+            };
+            amountContainer.appendChild(button);
+        });
+    }
+
+    function submitCustomAmount() {
+        const customAmount = document.getElementById('custom-amount').value;
+        if(customAmount) {
+            alert(`You entered a custom donation amount of PKR ${customAmount}`);
+        }
+    }
+</script>
+<script> function showMessage() {
+  // Create a beautiful modal with a message
+  let modal = document.createElement("div");
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100%";
+  modal.style.height = "100%";
+  modal.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+  modal.style.display = "flex";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
+  modal.style.zIndex = "9999";
+
+  let messageBox = document.createElement("div");
+  messageBox.style.backgroundColor = "white";
+  messageBox.style.padding = "20px 30px";
+  messageBox.style.borderRadius = "10px";
+  messageBox.style.textAlign = "center";
+  messageBox.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)";
+  messageBox.style.maxWidth = "400px";
+  messageBox.style.width = "80%";
+
+  let message = document.createElement("p");
+  message.style.fontSize = "1.5em";
+  message.style.color = "#333";
+  message.innerText = "Thank you for your kindness! Your donation brings hope and happiness to those in need.";
+
+  let closeBtn = document.createElement("button");
+  closeBtn.innerText = "Close";
+  closeBtn.style.marginTop = "20px";
+  closeBtn.style.padding = "10px 20px";
+  closeBtn.style.backgroundColor = "crimson";
+  closeBtn.style.color = "white";
+  closeBtn.style.border = "none";
+  closeBtn.style.borderRadius = "5px";
+  closeBtn.style.cursor = "pointer";
+  closeBtn.addEventListener("click", function() {
+      modal.remove(); // Close the modal when the button is clicked
+  });
+
+  messageBox.appendChild(message);
+  messageBox.appendChild(closeBtn);
+  modal.appendChild(messageBox);
+  document.body.appendChild(modal);
+}</script>
+
+
+</body>
+</html>

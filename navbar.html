@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset default margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensuring no gap at the top and no additional margin for body */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure full height for the body */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Full-width, fixed navbar */
+        .navbar {
+            position: fixed; /* Fix navbar at the top */
+            top: 0;
+            left: -50;
+            width: 100%;
+            background: crimson;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+        /* Flex container for navbar links */
+        .navdiv {
+            font-size: 18px; /* Consistent font size */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: color 0.3s, transform 0.3s; 
+        }
+
+        .navdiv a:hover {
+            color: white;
+            background-color: black;
+            transform: scale(1.1);
+            border-radius: 5px;
+        }
+
+        /* Styling for the list items */
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0 10px;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .button-link {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-link:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .brand-logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-left: 20px;
+        }
+
+        /* Content below navbar */
+        .content {
+            padding: 20px;
+            margin-top: 90px; /* Push content below the fixed navbar */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="brand-logo">HANDSOFHOPE</div>
+        <div class="navdiv">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#" class="button-link">LOGIN</a></li>
+                <li><a href="#" class="button-link">SIGN UP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to Hands of Hope</h1>
+        <p>Your content goes here. This area is below the fixed navbar.</p>
+    </div>
+</body>
+</html>
